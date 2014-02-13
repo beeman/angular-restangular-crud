@@ -3,14 +3,20 @@
     <a href="#/notes" class="btn btn-default pull-right">Cancel</a>
 </h2>
 
-
-
 <form class="col-md-8 col-md-offset-2">
-    <div>
-        <input class="form-control" id="name" name="name" ng-model="name" placeholder="Name">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>{{note.name}}</h4>
+            <p>{{note.content}}</p>
+        </div>
     </div>
-    <div>
-        <textarea class="form-control" id="content" name="content" ng-model="content" placeholder="Content"></textarea>
+    <div class="form-group">
+        <input class="form-control" id="name" name="name" ng-model="note.name" placeholder="Name">
     </div>
-    <button ng-click="add()" class="btn btn-default">Save</button>
+    <div class="form-group">
+        <textarea class="form-control" id="content" name="content" ng-model="note.content" placeholder="Content"></textarea>
+    </div>
+    <div class="form-group">
+        <button ng-click="save()" class="btn btn-default pull-right">Save</button>
+    </div>
 </form>

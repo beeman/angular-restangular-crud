@@ -1,19 +1,26 @@
 <h2>
     notes/list
-    <a href="#/notes/add" class="btn btn-default pull-right">
-        <i class="glyphicon glyphicon-plus-sign"></i> New</a>
+    <a href="#/notes/add" class="btn btn-default pull-right">New</a>
 </h2>
 <div ng-repeat="note in notes">
-    <div>
-        <div class="pull-right">
-            <a href="#/notes/edit/{{note.id}}">
-                <i class="glyphicon glyphicon-pencil"></i>
-            </a>
-            <a href="#/notes/delete/{{note.id}}">
-                <i class="glyphicon glyphicon-trash"></i>
-            </a>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>
+                <div class="pull-right btngroup">
+                    <a class="btn btn-default" href="#/notes/edit/{{note.id}}">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-default" ng-click="delete(note)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </div>
+                <a href="#/notes/{{note.id}}">{{note.name}}</a>
+            </h4>
+            <p>{{note.content}}</p>
         </div>
-        <a href="#/notes/{{note.id}}">{{note.name}}</a>
-        <p>{{note.content}}</p>
     </div>
+</div>
+
+<div ng-hide="notes.length">
+    <h4><a href="#/notes/add">You have no notes, add some!</a></h4>
 </div>
