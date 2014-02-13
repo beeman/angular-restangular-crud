@@ -75,7 +75,7 @@ app.use(app.router);
 // The static file server should come after all other routes
 // Every request that goes through the static middleware hits
 // the file system to check if a file exists.
-app.use(loopback.static(path.join(__dirname, '../client')));
+app.use(loopback.static(path.join(__dirname, '../client/app/')));
 
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error
@@ -106,7 +106,7 @@ app.use(loopback.errorHandler());
  * (remove this to handle `/` on your own)
  */
 
-app.get('/', loopback.status());
+app.get('/status', loopback.status());
 
 /*
  * 6. Enable access control and token based authentication.
