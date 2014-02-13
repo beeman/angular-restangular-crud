@@ -32,6 +32,15 @@ var app = angular.module('scaffoldApp', [
         templateUrl: 'views/notes/add.html',
         controller: 'NotesCtrl'
       })
+      .when('/notes/delete/:id', {
+        controller: 'NotesCtrl',
+        resolve: {
+          note: function(NoteRepository, $route){
+            return NoteRepository.ad($route.current.params.id);
+          }
+        }
+
+      })
       .when('/notes/:id', {
         templateUrl: 'views/notes/item.html',
         controller: 'NotesCtrl',
@@ -80,6 +89,9 @@ app.factory('AbstractRepository', [function () {
         },
         create: function (newResource) {
             return this.restangular.all(this.route).post(newResource);
+        },
+        remove: function (id) {
+            return this.restangular.delete(this.route, id);
         }
         // etc.
     };

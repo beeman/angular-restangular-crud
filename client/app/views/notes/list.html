@@ -1,13 +1,19 @@
 <h2>
     notes/list
-    <a href="#/notes/add" class="btn btn-default pull-right"><i class="glyphicon glyphicon-plus-sign"></i> New</a>
+    <a href="#/notes/add" class="btn btn-default pull-right">
+        <i class="glyphicon glyphicon-plus-sign"></i> New</a>
 </h2>
-<ul class="list-unstyled">
-    <li ng-repeat="note in notes">
+<div ng-repeat="note in notes">
+    <div>
+        <div class="pull-right">
+            <a href="#/notes/edit/{{note.id}}">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </a>
+            <a href="#/notes/delete/{{note.id}}">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
+        </div>
         <a href="#/notes/{{note.id}}">{{note.name}}</a>
         <p>{{note.content}}</p>
-    </li>
-</ul>
-
-<h3>object:</h3>
-<pre>{{notes | json}}</pre>
+    </div>
+</div>

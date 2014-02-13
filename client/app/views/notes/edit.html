@@ -1,12 +1,16 @@
-<p>This is the notes/edit view.</p>
+<h2>
+    notes/edit
+    <a href="#/notes" class="btn btn-default pull-right">Cancel</a>
+</h2>
 
-<button class="btn btn-default">Save note</button>
-<a href="#/note/{{note.id}}" class="btn btn-default">Cancel</a>
 
-<form>
-    <input id="name" name="name" ng-model="name" placeholder="Name">
-    <textarea id="content" name="content" ng-model="content" placeholder="Content"></textarea>
-    <button ng-click="update()" class="btn btn-default">Add</button>
+
+<form class="col-md-8 col-md-offset-2">
+    <div>
+        <input class="form-control" id="name" name="name" ng-model="name" placeholder="Name">
+    </div>
+    <div>
+        <textarea class="form-control" id="content" name="content" ng-model="content" placeholder="Content"></textarea>
+    </div>
+    <button ng-click="add()" class="btn btn-default">Save</button>
 </form>
-
-<pre>{{note | json}}</pre>
