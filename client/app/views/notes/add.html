@@ -1,0 +1,16 @@
+<h2>
+    notes/add
+    <a href="#/notes/add" class="btn btn-default pull-right">
+        <i class="glyphicon glyphicon-plus-sign"></i>New</a>
+</h2>
+
+
+<form class="col-md-8 col-md-offset-2">
+    <div>
+        <input class="form-control" id="name" name="name" ng-model="name" placeholder="Name">
+    </div>
+    <div>
+        <textarea class="form-control" id="content" name="content" ng-model="content" placeholder="Content"></textarea>
+    </div>
+    <button ng-click="add()" class="btn btn-default">Add</button>
+</form>

@@ -1,0 +1,12 @@
+<p>This is the notes/edit view.</p>
+
+<button class="btn btn-default">Save note</button>
+<a href="#/note/{{note.id}}" class="btn btn-default">Cancel</a>
+
+<form>
+    <input id="name" name="name" ng-model="name" placeholder="Name">
+    <textarea id="content" name="content" ng-model="content" placeholder="Content"></textarea>
+    <button ng-click="update()" class="btn btn-default">Add</button>
+</form>
+
+<pre>{{note | json}}</pre>
