@@ -91,7 +91,6 @@ Edit app/index.html and the following line just before the 'endbuild' line
 
 # Todo
 
- * Fix bug with editing, it's only saving the name field, not the description
  * Add easy DB configuration
  * Start using angular-ui-browser
  * You name it?

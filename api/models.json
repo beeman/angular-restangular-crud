@@ -118,7 +118,7 @@
       "name": {
         "type": "string"
       },
-      "contente": {
+      "content": {
         "type": "string"
       }
     },
