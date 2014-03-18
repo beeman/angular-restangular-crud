@@ -68,6 +68,17 @@ Edit app/index.html and the following line just before the 'endbuild' line
 
     <script src="scripts/controllers/hosts.js"></script>
 
+
+Update the API to accept this datatype. Edit api/models.json and add the following code to the object array:
+
+    "host": {
+      "public": true,
+      "dataSource": "db",
+      "plural": "hosts"
+    }
+
+Now restart the API to start accepting the model abov..
+
 # Todo
 
  * Add easy DB configuration
