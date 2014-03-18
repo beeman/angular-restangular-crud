@@ -90,38 +90,7 @@
     "dataSource": "db",
     "public": true
   },
-  "setting": {
-    "properties": {
-      "key": {
-        "type": "string"
-      },
-      "value": {
-        "type": "string"
-      }
-    },
-    "public": true,
-    "dataSource": "db",
-    "plural": "settings"
-  },
-  "host": {
-    "properties": {
-      "name": {
-        "type": "string"
-      }
-    },
-    "public": true,
-    "dataSource": "db",
-    "plural": "hosts"
-  },
   "note": {
-    "properties": {
-      "name": {
-        "type": "string"
-      },
-      "content": {
-        "type": "string"
-      }
-    },
     "public": true,
     "dataSource": "db",
     "plural": "notes"
