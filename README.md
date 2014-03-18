@@ -31,47 +31,26 @@ Grunt might show some errors, most of the time it's jslint testing your JavaScri
 
 If all went well you can now list/add/view and edit notes.
 
-Though there are some schema's configured in api/models.json (look at the bottom, setting, host and note) it works schemaless so you can just add some fields to your forms and the data will be saved. Per default the API has an in-memory DB wich will be cleared when you restart the API. You can connect the API to a Mongodb/MySQL or Oracle database.
-
 You can start working in the client directory and most of the changes will be picked up by autoreload (https://www.npmjs.org/package/livereload). Grunt serves the client on port 9000 and the API serves the same app at port 3000, but without the livereload.
 
 It is trivial to create some more models and quickly crank out a simple scaffold, as show below. 
 
 ## Adding a new datatype to this example
 
+We will add an object named 'Host' 
+
 Add menu item somewhere around line 30 in app/index.html:
 
-    <li><a ng-href="#/hosts">Hosts</a></li>
+    <li ui-sref-active="active"><a href='' ui-sref="hosts.list">Hosts</a></li>
 
-Add routes in app/scripts/app.js, right after the existing routes, before the .otherwise() methode.
+Copy app/scripts/controllers/notes.js to app/scripts/controllers/hosts.js 
 
-    .when('/hosts/', {
-      templateUrl: 'views/hosts/list.html',
-      controller: 'HostsListCtrl'
-    })
-    .when('/hosts/add', {
-      templateUrl: 'views/hosts/add.html',
-      controller: 'HostsAddCtrl'
-    })
-    .when('/hosts/:id', {
-      templateUrl: 'views/hosts/item.html',
-      controller: 'HostsItemCtrl'
-    })
-    .when('/hosts/edit/:id', {
-      templateUrl: 'views/hosts/edit.html',
-      controller: 'HostsEditCtrl'
-    })
-
-Now we can click a link and access the above routes:
-
-Let's create the controllers:
-
-    $ cp app/scripts/controllers/notes.js app/scripts/controllers/host.js 
+    $ cp app/scripts/controllers/notes.js app/scripts/controllers/hosts.js 
 
 Now edit the new file and search and replace:
 
-    note => host
-    Note => Host
+    find hosts.js -type f -exec sed -i '' 's/note/host/g' {} \;
+    find hosts.js -type f -exec sed -i '' 's/Note/Host/g' {} \;
 
 Create the views:
 
@@ -80,8 +59,8 @@ Create the views:
 
 Now edit these new files and search and replace:
 
-    note => host
-    Note => Host
+    find . -type f -exec sed -i '' 's/note/host/g' {} \;
+    find . -type f -exec sed -i '' 's/Note/Host/g' {} \;
 
 Last but certainly not least, register the new controller in your template:
 
@@ -92,7 +71,6 @@ Edit app/index.html and the following line just before the 'endbuild' line
 # Todo
 
  * Add easy DB configuration
- * Start using angular-ui-browser
  * You name it?
 
 # License
