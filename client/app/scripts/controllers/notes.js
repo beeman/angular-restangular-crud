@@ -16,13 +16,13 @@ app.factory('NoteRepository', ['Restangular', 'AbstractRepository',
 ]);
 
 /* Here the controllers are defines */
-app.controller('NotesListCtrl', function ($scope, NoteRepository, $location) {
+app.controller('NotesListCtrl', function ($scope, NoteRepository) {
   $scope.notes = NoteRepository.getList();
   $scope.delete = function (data) {
     if(window.confirm('Are you sure?')) {
       NoteRepository.remove(data).then(function () {
           $scope.notes = NoteRepository.getList();
-      });
+        });
     }
   };
 });
