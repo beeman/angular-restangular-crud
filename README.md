@@ -49,14 +49,14 @@ Copy app/scripts/controllers/notes.js to app/scripts/controllers/hosts.js
 
 Now edit the new file and search and replace:
 
-    find hosts.js -type f -exec sed -i '' 's/note/host/g' {} \;
-    find hosts.js -type f -exec sed -i '' 's/Note/Host/g' {} \;
+    find app/scripts/controllers/hosts.js -type f -exec sed -i '' 's/note/host/g' {} \;
+    find app/scripts/controllers/hosts.js -type f -exec sed -i '' 's/Note/Host/g' {} \;
 
 Create the views:
 
     mkdir app/views/hosts/
-    cp app/views/notes/* app/view/hosts/
-
+    cp app/views/notes/* app/views/hosts
+    
 Now edit these new files and search and replace:
 
     find . -type f -exec sed -i '' 's/note/host/g' {} \;
