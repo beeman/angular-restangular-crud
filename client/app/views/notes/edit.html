@@ -1,22 +1,26 @@
-<h2>
-    notes/edit
-    <a href="#/notes" class="btn btn-default pull-right">Cancel</a>
-</h2>
+<p class="lead">
+  <a ui-sref="^.list" class="btn btn-large btn-default">
+    <i class="glyphicon glyphicon-arrow-left"></i>
+  </a>
+  <a ng-click="save()" href="" class="btn btn-default pull-right">
+    <i class="glyphicon glyphicon-floppy-save"></i>
+  </a>
+</p>
 
-<form class="col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h4>{{note.name}}</h4>
-            <p>{{note.content}}</p>
-        </div>
-    </div>
-    <div class="form-group">
-        <input class="form-control" id="name" name="name" ng-model="note.name" placeholder="Name">
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" id="content" name="content" ng-model="note.content" placeholder="Content"></textarea>
-    </div>
-    <div class="form-group">
-        <button ng-click="save()" class="btn btn-default pull-right">Save</button>
-    </div>
-</form>
+<div class="form-group">
+  <input class="form-control" id="name" name="name" ng-model="note.name" placeholder="Name">
+</div>
+<div class="form-group">
+  <textarea class="form-control" id="content" name="content" ng-model="note.content" placeholder="Content"></textarea>
+</div>
+
+<hr>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+      {{note.name}}
+  </div>
+  <div class="panel-body">
+    <pre>{{note.content}}</pre>
+  </div>
+</div>

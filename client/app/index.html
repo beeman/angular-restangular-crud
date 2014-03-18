@@ -28,20 +28,15 @@
     <div class="container">
         <div class="header">
             <ul class="nav nav-pills pull-right">
-                <li><a ng-href="/">Home</a></li>
-                <li><a ng-href="#/notes">Notes</a></li>
+                <li><a href='' ui-sref="home">Home</a></li>
+                <li ui-sref-active="active"><a href='' ui-sref="notes.list">Notes</a></li>
             </ul>
-            <h3 class="text-muted">angular scaffold</h3>
+            <h3 class="text-muted">AngularJS + Restangular + UI-Router</h3>
         </div>
 
         <!-- Add your site or application content here -->
-        <div ng-view=""></div>
+        <div ui-view ng-view=""></div>
     </div>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -54,6 +49,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

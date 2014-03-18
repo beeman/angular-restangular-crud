@@ -4,39 +4,27 @@ var app = angular.module('scaffoldApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
-  'restangular'
+  'restangular',
+  'ui.router'
 ]);
 
 app.config(function (RestangularProvider) {
   RestangularProvider.setBaseUrl('http://localhost:3000/api');
 });
 
-app.config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    })
 
-    .when('/notes/', {
-      templateUrl: 'views/notes/list.html',
-      controller: 'NotesListCtrl'
-    })
-    .when('/notes/add', {
-      templateUrl: 'views/notes/add.html',
-      controller: 'NotesAddCtrl'
-    })
-    .when('/notes/:id', {
-      templateUrl: 'views/notes/item.html',
-      controller: 'NotesItemCtrl'
-    })
-    .when('/notes/edit/:id', {
-      templateUrl: 'views/notes/edit.html',
-      controller: 'NotesEditCtrl'
-    })
+app.config(['$stateProvider', '$urlRouterProvider',
+  function ($stateProvider, $urlRouterProvider) {
 
-    .otherwise({
-      redirectTo: '/'
-    });
-});
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      });
+
+
+  }
+]);

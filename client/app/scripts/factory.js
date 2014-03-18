@@ -40,15 +40,3 @@ app.factory('AbstractRepository', [
     return AbstractRepository;
   }
 ]);
-
-app.factory('NoteRepository', ['Restangular', 'AbstractRepository',
-  function (restangular, AbstractRepository) {
-
-    function NoteRepository() {
-      AbstractRepository.call(this, restangular, 'notes');
-    }
-
-    AbstractRepository.extend(NoteRepository);
-    return new NoteRepository();
-  }
-]);
