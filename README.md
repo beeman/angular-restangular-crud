@@ -59,8 +59,8 @@ Create the views:
     
 Now edit these new files and search and replace:
 
-    find . -type f -exec sed -i '' 's/note/host/g' {} \;
-    find . -type f -exec sed -i '' 's/Note/Host/g' {} \;
+    find app/views/hosts/. -type f -exec sed -i '' 's/note/host/g' {} \;
+    find app/views/hosts/. -type f -exec sed -i '' 's/Note/Host/g' {} \;
 
 Last but certainly not least, register the new controller in your template:
 
