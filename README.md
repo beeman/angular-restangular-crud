@@ -1,4 +1,4 @@
-### If you like this my [new project](https://github.com/beeman/lb-ng-bs) might be interesting too!
+### If you like this my [new project](https://github.com/beeman/loopback-angular-admin) might be interesting too!
 
 It uses loopback, angular, restangular and has support for user authentication, file uploads and other stuff :)
 
