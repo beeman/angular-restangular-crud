@@ -6,8 +6,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "loopback": "*",
-    "loopback-datasource-juggler" : "*"
+    "loopback": "1.*",
+    "loopback-datasource-juggler" : "1.*"
   },
   "optionalDependencies": {
     "loopback-explorer": "~1.1.0",
